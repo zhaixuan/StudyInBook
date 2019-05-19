@@ -1,8 +1,8 @@
 package com.dionysus.stydyinbook;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioGroup;
 
@@ -23,6 +23,11 @@ public class MainActivity extends FragmentActivity {
      * 选中Fragment对应的位置
      */
     private int miPosition;
+
+    /**
+     * 上次切换的Fragment
+     */
+    private Fragment mContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,21 +72,46 @@ public class MainActivity extends FragmentActivity {
                     break;
             }
             //根据位置得到对应的Fragment
-            BaseFragment fragment = getFragment();
+            BaseFragment to = getFragment();
             //替换
-            switchFragment(fragment);
+            switchFragment(mContent, to);
         }
     }
 
-    private void switchFragment(BaseFragment fragment) {
-        //1.得到FragmentManager
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        //2.开启事务
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        //3.替换
-        transaction.replace(R.id.fl_content, fragment);
-        //4.提交
-        transaction.commit();
+    /**
+     * 切换fragment
+     *
+     * @param from 原先显示的Fragment
+     * @param to   将要展示的Fragment
+     */
+    private void switchFragment(Fragment from, Fragment to) {
+        if (from != to) {
+            mContent = to;
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            //才切换
+            //判断有没有添加
+            if (!to.isAdded()) {
+                //to没有被添加
+                //from隐藏
+                if (null != from) {
+                    transaction.hide(from);
+                }
+                //添加to
+                if (null != to) {
+                    transaction.add(R.id.fl_content, to).commit();
+                }
+            } else {
+                //to已经被添加
+                //from隐藏
+                if (null != from) {
+                    transaction.hide(from);
+                }
+                //显示to
+                if (null != to) {
+                    transaction.show(to).commit();
+                }
+            }
+        }
     }
 
     /**
