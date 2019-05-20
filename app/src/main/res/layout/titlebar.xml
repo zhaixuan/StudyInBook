@@ -10,7 +10,7 @@
         android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Android知识库"
+        android:text="@string/common_frame_titlebar_name"
         android:textColor="@android:color/white"
         android:textSize="20sp" />
 

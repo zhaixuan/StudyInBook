@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">StydyInBook</string>
+    <!--CommonFrameFragment-->
+    <string name="common_frame_titlebar_name">Android知识库</string>
+    <!--NativeJsonParseActivity-->
+    <string name="json_titlebar_name">手动Json解析</string>
+    <string name="json_btn_javaobject">将Json对象转换为Java对象</string>
+    <string name="json_btn_javalist">将Json数组转换为Java集合</string>
+    <string name="json_btn_complex">复杂Json数据解析</string>
+    <string name="json_btn_special">特殊Json数据解析</string>
+    <string name="json_txt_original">原始数据</string>
+    <string name="json_txt_last">转换后的数据</string>
 </resources>
