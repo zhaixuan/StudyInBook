@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
+import com.dionysus.stydyinbook.json.bean.ShopInfo;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * 手动JSON解析页面
@@ -69,8 +73,9 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            //（1）将json格式的字符串{}转换为Java对象
             case R.id.btn_native_to_javaobject:
+                //（1）将json格式的字符串{}转换为Java对象
+                jsoonToJavaObjectByNative();
                 break;
             //（2）将json格式的字符串[]转换为Java对象的List
             case R.id.btn_native_to_javalist:
@@ -84,5 +89,32 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
             default:
                 break;
         }
+    }
+
+    /**
+     * 将json格式的字符串{}转换为Java对象
+     */
+    private void jsoonToJavaObjectByNative() {
+        //1.获取或创建Json数据
+        String json = "{\n" +
+                "\t\"id\":2, \"name\":\"大虾\", \n" +
+                "\t\"price\":12.3, \n" +
+                "\t\"imagePath\":\"http://192.168.10.165:8080/L05_Server/images/f1.jpg\"\n" +
+                "}\n";
+        //2.解析json
+        ShopInfo shopInfo = null;
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            int id = jsonObject.optInt("id");
+            String name = jsonObject.optString("name");
+            double price = jsonObject.optDouble("price");
+            String imagePath = jsonObject.optString("imagePath");
+            shopInfo = new ShopInfo(id, name, price, imagePath);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        //3.显示json数据
+        mtxtOriginal.setText(json);
+        mtxtLast.setText(shopInfo.toString());
     }
 }
