@@ -3,12 +3,14 @@ package com.dionysus.stydyinbook.json.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.mbms.FileInfo;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.json.bean.DataInfo;
+import com.dionysus.stydyinbook.json.bean.FilmInfo;
 import com.dionysus.stydyinbook.json.bean.ShopInfo;
 
 import org.json.JSONArray;
@@ -92,14 +94,82 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
                 break;
             case R.id.btn_native_special:
                 //（4）特殊json数据解析
+                jsonToJavaOfSpecial();
                 break;
             default:
                 break;
         }
     }
 
-    private void jsonToJavaOfComplex()
-    {
+    /**
+     * 特殊json数据解析
+     */
+    private void jsonToJavaOfSpecial() {
+        // 1.获取或创建Json数据
+        String json = "{\n" +
+                "    \"code\": 0,\n" +
+                "    \"list\": {\n" +
+                "        \"0\": {\n" +
+                "            \"aid\": \"6008965\",\n" +
+                "            \"author\": \"哔哩哔哩番剧\",\n" +
+                "            \"coins\": 170,\n" +
+                "            \"copyright\": \"Copy\",\n" +
+                "            \"create\": \"2016-08-25 21:34\"\n" +
+                "        },\n" +
+                "        \"1\": {\n" +
+                "            \"aid\": \"6008938\",\n" +
+                "            \"author\": \"哔哩哔哩番剧\",\n" +
+                "            \"coins\": 404,\n" +
+                "            \"copyright\": \"Copy\",\n" +
+                "            \"create\": \"2016-08-25 21:33\"\n" +
+                "        }\n" +
+                "    }\n" +
+                "}";
+        // 5.创建封装的java对象
+        FilmInfo filmInfo = new FilmInfo();
+        // 2.解析数据
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            // 3.第一层解析
+            int code = jsonObject.optInt("code");
+            JSONObject list = jsonObject.optJSONObject("list");
+            // 6.第一层封装
+            filmInfo.setCode(code);
+            List<FilmInfo.FileBean> lists = new ArrayList<>();
+            filmInfo.setList(lists);
+            // 4.第二层解析
+            for (int i = 0; i < list.length(); i++) {
+                JSONObject object = list.optJSONObject(i + "");
+                if (null != object) {
+                    String aid = object.optString("aid");
+                    String author = object.optString("author");
+                    int coins = object.optInt("coins");
+                    String copyright = object.optString("copyright");
+                    String create = object.optString("create");
+                    // 7.第二层数据封装
+                    FilmInfo.FileBean fileBean = new FilmInfo.FileBean();
+                    fileBean.setAid(aid);
+                    fileBean.setAuthor(author);
+                    fileBean.setCoins(coins);
+                    fileBean.setCopyright(copyright);
+                    fileBean.setCreate(create);
+                    lists.add(fileBean);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // 8.展示数据
+        mtxtOriginal.setText(json);
+        mtxtLast.setText(filmInfo.toString());
+
+    }
+
+    /**
+     * 复杂json数据解析
+     */
+    private void jsonToJavaOfComplex() {
         // 1.获取或创建Json数据
         String json = "{\n" +
                 "    \"data\": {\n" +
@@ -133,8 +203,7 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
         // 6.封装java对象
         DataInfo dataInfo = new DataInfo();
         // 2.解析数据
-        try
-        {
+        try {
             JSONObject jsonObject = new JSONObject(json);
             // 3.第一层解析
             JSONObject data = jsonObject.optJSONObject("data");
@@ -153,11 +222,9 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
             List<DataInfo.DataBean.ItemsBean> itemsBean = new ArrayList<>();
             dataBean.setItems(itemsBean);
             // 5.第三层解析
-            for(int i = 0; i< items.length(); i ++)
-            {
+            for (int i = 0; i < items.length(); i++) {
                 JSONObject jsonObject1 = items.optJSONObject(i);
-                if(null != jsonObject1)
-                {
+                if (null != jsonObject1) {
                     int id = jsonObject1.optInt("id");
                     String title = jsonObject1.optString("title");
                     // 9.第三层数据的封装
@@ -167,9 +234,7 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
                     itemsBean.add(bran);
                 }
             }
-        }
-        catch(JSONException e)
-        {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
         // 3.显示Json数据
