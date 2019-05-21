@@ -2,6 +2,7 @@
     <string name="app_name">StydyInBook</string>
     <!--CommonFrameFragment-->
     <string name="common_frame_titlebar_name">Android知识库</string>
+    <string name="launcer_txt_description">Android世界......</string>
     <!--NativeJsonParseActivity-->
     <string name="json_titlebar_name">手动Json解析</string>
     <string name="json_btn_javaobject">将Json对象转换为Java对象</string>
@@ -10,5 +11,9 @@
     <string name="json_btn_special">特殊Json数据解析</string>
     <string name="json_txt_original">原始数据：</string>
     <string name="json_txt_last">转换后的数据：</string>
-    <string name="launcer_txt_description">Android世界......</string>
+    <!--GsonParseActivity-->
+    <string name="gson_txt_title_name">Gson解析</string>
+    <string name="gson_btn__java_to_jsonobject">将java对象转换为json对象</string>
+    <string name="gson_btn__java_to_jsonarray">将Java集合转换为Gson数组</string>
+
 </resources>

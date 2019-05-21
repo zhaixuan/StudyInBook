@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.dionysus.stydyinbook.R;
+import com.dionysus.stydyinbook.gson.activity.GsonParseActivity;
 import com.dionysus.stydyinbook.json.activity.NativeJsonParseActivity;
 import com.dionysus.stydyinbook.okhttp.activity.OkHttpActivity;
 import com.dionysus.stydyinbook.adapter.CommonFrameAdapter;
@@ -38,8 +39,13 @@ public class CommonFrameFragment extends BaseFragment {
                     Intent intent = new Intent(mContext, OkHttpActivity.class);
                     mContext.startActivity(intent);
                 } else if ("nativejsonparse".equals(data.toLowerCase())) {
-                    // 点击条目跳转大手动JSON解析界面
+                    // 点击条目跳转到手动JSON解析界面
                     Intent intent = new Intent(mContext, NativeJsonParseActivity.class);
+                    mContext.startActivity(intent);
+                } else if ("gson".equals(data.toLowerCase()))
+                {
+                    // 点击条目跳转大手动Gson解析界面
+                    Intent intent = new Intent(mContext, GsonParseActivity.class);
                     mContext.startActivity(intent);
                 }
                 Toast.makeText(mContext, data, Toast.LENGTH_SHORT).show();
