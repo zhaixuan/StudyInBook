@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
+import com.dionysus.stydyinbook.json.bean.DataInfo;
 import com.dionysus.stydyinbook.json.bean.ShopInfo;
 
 import org.json.JSONArray;
@@ -87,6 +88,7 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
                 break;
             case R.id.btn_native_complex:
                 //（3）复杂json数据解析
+                jsonToJavaOfComplex();
                 break;
             case R.id.btn_native_special:
                 //（4）特殊json数据解析
@@ -94,6 +96,85 @@ public class NativeJsonParseActivity extends AppCompatActivity implements View.O
             default:
                 break;
         }
+    }
+
+    private void jsonToJavaOfComplex()
+    {
+        // 1.获取或创建Json数据
+        String json = "{\n" +
+                "    \"data\": {\n" +
+                "        \"count\": 5,\n" +
+                "        \"items\": [\n" +
+                "            {\n" +
+                "                \"id\": 45,\n" +
+                "                \"title\": \"坚果\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 132,\n" +
+                "                \"title\": \"炒货\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 166,\n" +
+                "                \"title\": \"蜜饯\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 195,\n" +
+                "                \"title\": \"果脯\"\n" +
+                "            },\n" +
+                "            {\n" +
+                "                \"id\": 196,\n" +
+                "                \"title\": \"礼盒\"\n" +
+                "            }\n" +
+                "        ]\n" +
+                "    },\n" +
+                "    \"rs_code\": \"1000\",\n" +
+                "    \"rs_msg\": \"success\"\n" +
+                "}";
+        // 6.封装java对象
+        DataInfo dataInfo = new DataInfo();
+        // 2.解析数据
+        try
+        {
+            JSONObject jsonObject = new JSONObject(json);
+            // 3.第一层解析
+            JSONObject data = jsonObject.optJSONObject("data");
+            String rsCode = jsonObject.optString("rs_code");
+            String rsMsg = jsonObject.optString("rs_msg");
+            // 7.第一层封装
+            dataInfo.setRs_code(rsCode);
+            dataInfo.setRs_msg(rsMsg);
+            DataInfo.DataBean dataBean = new DataInfo.DataBean();
+            dataInfo.setData(dataBean);
+            // 4.第二层解析
+            int count = data.optInt("count");
+            JSONArray items = data.optJSONArray("items");
+            // 8.第二层数据的封装
+            dataBean.setCount(count);
+            List<DataInfo.DataBean.ItemsBean> itemsBean = new ArrayList<>();
+            dataBean.setItems(itemsBean);
+            // 5.第三层解析
+            for(int i = 0; i< items.length(); i ++)
+            {
+                JSONObject jsonObject1 = items.optJSONObject(i);
+                if(null != jsonObject1)
+                {
+                    int id = jsonObject1.optInt("id");
+                    String title = jsonObject1.optString("title");
+                    // 9.第三层数据的封装
+                    DataInfo.DataBean.ItemsBean bran = new DataInfo.DataBean.ItemsBean();
+                    bran.setId(id);
+                    bran.setTitle(title);
+                    itemsBean.add(bran);
+                }
+            }
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+        // 3.显示Json数据
+        mtxtOriginal.setText(json);
+        mtxtLast.setText(dataInfo.toString());
     }
 
     /**
