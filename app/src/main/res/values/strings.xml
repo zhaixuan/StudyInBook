@@ -8,7 +8,7 @@
     <string name="json_btn_javalist">将Json数组转换为Java集合</string>
     <string name="json_btn_complex">复杂Json数据解析</string>
     <string name="json_btn_special">特殊Json数据解析</string>
-    <string name="json_txt_original">原始数据</string>
-    <string name="json_txt_last">转换后的数据</string>
-    <string name="launcer_txt_description">Android世界。。。</string>
+    <string name="json_txt_original">原始数据：</string>
+    <string name="json_txt_last">转换后的数据：</string>
+    <string name="launcer_txt_description">Android世界......</string>
 </resources>
