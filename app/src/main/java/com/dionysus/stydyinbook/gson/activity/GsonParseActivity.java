@@ -41,7 +41,7 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
         mbtnJavaToJsonArray = (Button) findViewById(R.id.btn_gson_java_to_jsonarray);
         mtxtOriginal = (TextView) findViewById(R.id.txt_original);
         mtxtLast = (TextView) findViewById(R.id.txt_last);
-        //设置按钮的点击事件
+        //设置按钮的点击事件监听
         mbtnJsonToJavaobject.setOnClickListener(this);
         mbtnJsonArrayToJavalist.setOnClickListener(this);
         mbtnJavaToJsonObject.setOnClickListener(this);
@@ -53,12 +53,16 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_json_to_javaobject:
+                //（1）将json格式的字符串{}转换为Java对象
                 break;
             case R.id.btn_jsonarray_to_javalist:
+                //（2）将json格式的字符串[]转换为Java对象的List
                 break;
             case R.id.btn_gson_java_to_jsonobject:
+                //（3）将Java对象转换为json字符串{}
                 break;
             case R.id.btn_gson_java_to_jsonarray:
+                //（4）将Java对象的List转换为json字符串[]
                 break;
             default:
                 break;
