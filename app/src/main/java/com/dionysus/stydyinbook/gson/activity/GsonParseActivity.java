@@ -71,6 +71,7 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btn_gson_java_to_jsonobject:
                 //（3）将Java对象转换为json字符串{}
+                javaToJsonByGson();
                 break;
             case R.id.btn_gson_java_to_jsonarray:
                 //（4）将Java对象的List转换为json字符串[]
@@ -79,6 +80,20 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
                 break;
 
         }
+    }
+
+    /**
+     * 将Java对象转换为json字符串{}
+     */
+    private void javaToJsonByGson() {
+        //1.获取或创建java对象
+        ShopInfo shopInfo = new ShopInfo(1, "鲍鱼", (double) 250, "baoyu");
+        //2.生成JSON数据
+        Gson gson = new Gson();
+        String json = gson.toJson(shopInfo);
+        //3.展示数据
+        mtxtOriginal.setText(shopInfo.toString());
+        mtxtLast.setText(json);
     }
 
     /**

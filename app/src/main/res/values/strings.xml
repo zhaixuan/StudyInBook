@@ -14,6 +14,6 @@
     <!--GsonParseActivity-->
     <string name="gson_txt_title_name">Gson解析</string>
     <string name="gson_btn__java_to_jsonobject">将java对象转换为json对象</string>
-    <string name="gson_btn__java_to_jsonarray">将Java集合转换为Gson数组</string>
+    <string name="gson_btn__java_to_jsonarray">将java集合转换为json数组</string>
 
 </resources>
