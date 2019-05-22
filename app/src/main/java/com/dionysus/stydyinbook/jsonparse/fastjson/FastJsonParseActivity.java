@@ -10,6 +10,7 @@ import com.alibaba.fastjson.JSON;
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.jsonparse.json.bean.ShopInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -77,6 +78,7 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.btn_fastjson_javalist_to_jsonarray:
                 //（4）将Java对象的List转换为json字符串[]
+                javaListToJsonArray();
                 break;
             default:
                 break;
@@ -84,10 +86,27 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
+     * 将Java对象的List转换为json字符串[]
+     */
+    private void javaListToJsonArray() {
+        //1.创建一个java集合
+        ShopInfo xiaolongxia = new ShopInfo(1, "小龙虾", 100.0, "xiaokogxia");
+        ShopInfo huajia = new ShopInfo(2, "花甲", 28.0, "huajia");
+        List<ShopInfo> shops = new ArrayList<>();
+        shops.add(xiaolongxia);
+        shops.add(huajia);
+        //2.解析json数据
+        String jsonArray = JSON.toJSONString(shops);
+        //3.展示数据
+        mtxtOriginal.setText(shops.toString());
+        mtxtLatest.setText(jsonArray);
+    }
+
+    /**
      * 将Java对象转换为json字符串{}
      */
     private void javaObjectToJson() {
-        //1.创建或获取json数据
+        //1.创建一个java对象
         ShopInfo shop = new ShopInfo(1, "小龙虾", 100.0, "xiaokogxia");
         //2.解析json数据
         String jsonString = JSON.toJSONString(shop);
