@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".xuitls3.XUitls3Acticity"></activity>
+        <activity android:name=".xuitls3.annotation.FragmentXutils3Acitivty"></activity>
+        <activity android:name=".xuitls3.XUitls3Acticity" />
         <activity android:name=".jsonparse.fastjson.FastJsonParseActivity" />
         <activity android:name=".jsonparse.gson.GsonParseActivity" />
         <activity android:name=".jsonparse.json.activity.NativeJsonParseActivity" />

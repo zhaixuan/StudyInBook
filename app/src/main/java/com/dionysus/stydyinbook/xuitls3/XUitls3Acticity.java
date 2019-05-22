@@ -1,12 +1,14 @@
 package com.dionysus.stydyinbook.xuitls3;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
+import com.dionysus.stydyinbook.xuitls3.annotation.FragmentXutils3Acitivty;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -43,6 +45,8 @@ public class XUitls3Acticity extends Activity {
     private void onClickEvent(View view) {
         switch (view.getId()) {
             case R.id.btn_annotation_module:
+                Intent intent = new Intent(this, FragmentXutils3Acitivty.class);
+                startActivity(intent);
                 break;
             case R.id.btn_net:
                 break;

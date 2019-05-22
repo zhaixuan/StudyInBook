@@ -27,4 +27,6 @@
     <string name="xutils3_btn_net">xUtils3联网模块</string>
     <string name="xutils3_btn_image">xUtils3加载单张图片</string>
     <string name="xutils3_btn_image_list">xUtils3加载列表图片</string>
+    <!--FragmentXutils3Activity-->
+    <string name="xutils3fragment_txt_title_name">在Fragment中使用注解</string>
 </resources>
