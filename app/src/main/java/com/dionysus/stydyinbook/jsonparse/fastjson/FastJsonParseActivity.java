@@ -10,6 +10,8 @@ import com.alibaba.fastjson.JSON;
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.jsonparse.json.bean.ShopInfo;
 
+import java.util.List;
+
 /**
  * FastJson数据解析框架（阿里开源）
  * （1）将json格式的字符串{}转换为Java对象
@@ -67,6 +69,7 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.btn_jsonarray_to_javalist:
                 //（2）将json格式的字符串[]转换为Java对象的List
+                jsonArrayToJavaListByFastJson();
                 break;
             case R.id.btn_fastjson_java_to_json:
                 //（3）将Java对象转换为json字符串{}
@@ -77,6 +80,32 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
             default:
                 break;
         }
+    }
+
+    /**
+     * 将json格式的字符串[]转换为Java对象的List
+     */
+    private void jsonArrayToJavaListByFastJson() {
+        //1.创建或获取json数据
+        String json = "[\n" +
+                "    {\n" +
+                "        \"id\": 1,\n" +
+                "        \"imagePath\": \"http://192.168.10.165:8080/f1.jpg\",\n" +
+                "        \"name\": \"大虾1\",\n" +
+                "        \"price\": 12.3\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"id\": 2,\n" +
+                "        \"imagePath\": \"http://192.168.10.165:8080/f2.jpg\",\n" +
+                "        \"name\": \"大虾2\",\n" +
+                "        \"price\": 12.5\n" +
+                "    }\n" +
+                "]";
+        //2.解析json数据
+        List<ShopInfo> shops = JSON.parseArray(json, ShopInfo.class);
+        //3.展示数据
+        mtxtOriginal.setText(json);
+        mtxtLatest.setText(shops.toString());
     }
 
     /**
