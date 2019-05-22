@@ -9,11 +9,11 @@
     <include layout="@layout/titlebar" />
 
     <Button
-        android:id="@+id/btn_json_to_javaobject"
+        android:id="@+id/btn_json_to_java"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/json_btn_javaobject"
+        android:text="@string/fastjson_btn_jsontojava"
         android:textAllCaps="false"
         android:textSize="18sp" />
 
@@ -22,25 +22,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/json_btn_javalist"
+        android:text="@string/fastjson_btn_jsonarraytojavalist"
         android:textAllCaps="false"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_gson_java_to_jsonobject"
+        android:id="@+id/btn_fastjson_java_to_json"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/gson_btn_java_to_jsonobject"
+        android:text="@string/fastjson_btn_javatojson"
         android:textAllCaps="false"
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_gson_java_to_jsonarray"
+        android:id="@+id/btn_fastjson_javalist_to_jsonarray"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/gson_btn_java_to_jsonarray"
+        android:text="@string/fastjson_btn_javalisttojsonarray"
         android:textAllCaps="false"
         android:textSize="18sp" />
 
@@ -80,7 +80,7 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/txt_last"
+                android:id="@+id/txt_latest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"

@@ -1,4 +1,4 @@
-package com.dionysus.stydyinbook.gson.activity;
+package com.dionysus.stydyinbook.gson;
 
 import android.content.Context;
 import android.os.Bundle;

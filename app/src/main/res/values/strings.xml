@@ -13,7 +13,13 @@
     <string name="json_txt_last">转换后的数据：</string>
     <!--GsonParseActivity-->
     <string name="gson_txt_title_name">Gson解析</string>
-    <string name="gson_btn__java_to_jsonobject">将java对象转换为json对象</string>
-    <string name="gson_btn__java_to_jsonarray">将java集合转换为json数组</string>
+    <string name="gson_btn_java_to_jsonobject">将java对象转换为json对象</string>
+    <string name="gson_btn_java_to_jsonarray">将java集合转换为json数组</string>
+    <!--FastJsonParseActivity-->
+    <string name="fastjson_txt_title_name">FastJson解析</string>
+    <string name="fastjson_btn_jsontojava">将json对象转换为java对象</string>
+    <string name="fastjson_btn_jsonarraytojavalist">将json数组转换为json集合</string>
+    <string name="fastjson_btn_javatojson">将java对象转换为json对象</string>
+    <string name="fastjson_btn_javalisttojsonarray">将java集合转换为json数组</string>
 
 </resources>
