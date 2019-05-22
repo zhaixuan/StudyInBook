@@ -73,6 +73,7 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.btn_fastjson_java_to_json:
                 //（3）将Java对象转换为json字符串{}
+                javaObjectToJson();
                 break;
             case R.id.btn_fastjson_javalist_to_jsonarray:
                 //（4）将Java对象的List转换为json字符串[]
@@ -80,6 +81,19 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
             default:
                 break;
         }
+    }
+
+    /**
+     * 将Java对象转换为json字符串{}
+     */
+    private void javaObjectToJson() {
+        //1.创建或获取json数据
+        ShopInfo shop = new ShopInfo(1, "小龙虾", 100.0, "xiaokogxia");
+        //2.解析json数据
+        String jsonString = JSON.toJSONString(shop);
+        //3.展示数据
+        mtxtOriginal.setText(jsonString);
+        mtxtLatest.setText(shop.toString());
     }
 
     /**
