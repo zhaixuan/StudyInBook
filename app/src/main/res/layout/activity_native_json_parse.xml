@@ -10,39 +10,23 @@
 
     <Button
         android:id="@+id/btn_native_to_javaobject"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/json_btn_javaobject"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/json_btn_javaobject" />
 
     <Button
         android:id="@+id/btn_native_to_javalist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/json_btn_javalist"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/json_btn_javalist" />
 
     <Button
         android:id="@+id/btn_native_complex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/json_btn_complex"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/json_btn_complex" />
 
     <Button
         android:id="@+id/btn_native_special"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/json_btn_special"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/json_btn_special" />
 
     <ScrollView
         android:id="@+id/scroll_view"

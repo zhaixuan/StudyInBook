@@ -52,11 +52,11 @@ public class DemoFragment extends Fragment {
         mbtnFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "点击已生效", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, getString(R.string.xutils3_click_is_worked), Toast.LENGTH_SHORT).show();
             }
         });
 
-        mtxtText.setText("已初始化");
+        mtxtText.setText(getString(R.string.xutils3_text_is_already_init));
     }
 }
 

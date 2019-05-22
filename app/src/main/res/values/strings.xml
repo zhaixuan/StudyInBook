@@ -30,4 +30,12 @@
     <!--FragmentXutils3Activity-->
     <string name="xutils3fragment_txt_title_name">在Fragment中使用注解</string>
     <string name="xutils3_btn_fragment">Fragment的按钮</string>
+    <string name="xutils3_click_is_worked">点击已生效</string>
+    <string name="xutils3_text_is_already_init">已初始化</string>
+    <string name="net_btn_request">Get和Post请求</string>
+    <string name="net_btn_download">大文件下载</string>
+    <string name="net_btn_upload">大文件上传</string>
+    <string name="net_txt_display">显示结果：</string>
+    <!--XUtilsNetActivity-->
+    <string name="xutils3_net_title_name">xUtils网络模块</string>
 </resources>

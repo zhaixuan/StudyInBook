@@ -10,38 +10,22 @@
 
     <Button
         android:id="@+id/btn_annotation_module"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/xutils3_btn_annotation_module"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/xutils3_btn_annotation_module" />
 
     <Button
         android:id="@+id/btn_net"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/xutils3_btn_net"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/xutils3_btn_net" />
 
     <Button
         android:id="@+id/btn_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/xutils3_btn_image"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/xutils3_btn_image" />
 
     <Button
         android:id="@+id/btn_image_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/xutils3_btn_image_list"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        style="@style/button_style"
+        android:text="@string/xutils3_btn_image_list" />
 
 </LinearLayout>

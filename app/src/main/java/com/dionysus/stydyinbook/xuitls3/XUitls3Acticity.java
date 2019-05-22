@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.xuitls3.annotation.FragmentXutils3Acitivty;
+import com.dionysus.stydyinbook.xuitls3.net.XUtils3NetActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -49,6 +50,8 @@ public class XUitls3Acticity extends Activity {
                 startActivity(intent);
                 break;
             case R.id.btn_net:
+                Intent intent2 = new Intent(this, XUtils3NetActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.btn_image:
                 break;
