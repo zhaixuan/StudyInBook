@@ -75,11 +75,30 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btn_gson_java_to_jsonarray:
                 //（4）将Java对象的List转换为json字符串[]
+                javaListToJsonArrayByGson();
                 break;
             default:
                 break;
 
         }
+    }
+
+    /**
+     * 将Java对象的List转换为json字符串[]
+     */
+    private void javaListToJsonArrayByGson() {
+        //1.获取或创建java对象
+        List<ShopInfo> shops = new ArrayList<>();
+        ShopInfo baoyu = new ShopInfo(1, "鲍鱼", 250.0, "baoyu");
+        ShopInfo longxia = new ShopInfo(2, "龙虾", 50.0, "龙虾");
+        shops.add(baoyu);
+        shops.add(longxia);
+        //2.生成JSON数据
+        Gson gson = new Gson();
+        String json = gson.toJson(shops);
+        //3.展示数据
+        mtxtOriginal.setText(shops.toString());
+        mtxtLast.setText(json);
     }
 
     /**
