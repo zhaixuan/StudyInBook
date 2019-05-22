@@ -1,4 +1,4 @@
-package com.dionysus.stydyinbook.gson;
+package com.dionysus.stydyinbook.jsonparse.gson;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
-import com.dionysus.stydyinbook.json.bean.ShopInfo;
+import com.dionysus.stydyinbook.jsonparse.json.bean.ShopInfo;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;

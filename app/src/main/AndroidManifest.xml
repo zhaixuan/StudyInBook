@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fastjson.FastJsonParseActivity"></activity>
-        <activity android:name=".gson.GsonParseActivity" />
-        <activity android:name=".json.activity.NativeJsonParseActivity" />
+        <activity android:name=".jsonparse.fastjson.FastJsonParseActivity"></activity>
+        <activity android:name=".jsonparse.gson.GsonParseActivity" />
+        <activity android:name=".jsonparse.json.activity.NativeJsonParseActivity" />
         <activity android:name=".okhttp.activity.OkHttpActivity" />
         <activity android:name=".LauncherActivity">
             <intent-filter>

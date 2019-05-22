@@ -10,9 +10,9 @@ import android.widget.Toast;
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.adapter.CommonFrameAdapter;
 import com.dionysus.stydyinbook.base.BaseFragment;
-import com.dionysus.stydyinbook.fastjson.FastJsonParseActivity;
-import com.dionysus.stydyinbook.gson.GsonParseActivity;
-import com.dionysus.stydyinbook.json.activity.NativeJsonParseActivity;
+import com.dionysus.stydyinbook.jsonparse.fastjson.FastJsonParseActivity;
+import com.dionysus.stydyinbook.jsonparse.gson.GsonParseActivity;
+import com.dionysus.stydyinbook.jsonparse.json.activity.NativeJsonParseActivity;
 import com.dionysus.stydyinbook.okhttp.activity.OkHttpActivity;
 
 /**

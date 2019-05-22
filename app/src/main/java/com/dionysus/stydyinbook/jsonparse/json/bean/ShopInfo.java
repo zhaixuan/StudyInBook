@@ -1,4 +1,4 @@
-package com.dionysus.stydyinbook.json.bean;
+package com.dionysus.stydyinbook.jsonparse.json.bean;
 
 /**
  * @className: ShopInfo

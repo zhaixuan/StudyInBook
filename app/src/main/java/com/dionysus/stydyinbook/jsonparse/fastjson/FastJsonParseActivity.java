@@ -1,4 +1,4 @@
-package com.dionysus.stydyinbook.fastjson;
+package com.dionysus.stydyinbook.jsonparse.fastjson;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
 import com.dionysus.stydyinbook.R;
-import com.dionysus.stydyinbook.json.bean.ShopInfo;
+import com.dionysus.stydyinbook.jsonparse.json.bean.ShopInfo;
 
 /**
  * FastJson数据解析框架（阿里开源）
