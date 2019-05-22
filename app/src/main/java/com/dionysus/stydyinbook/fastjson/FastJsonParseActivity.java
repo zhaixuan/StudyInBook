@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.dionysus.stydyinbook.R;
+import com.dionysus.stydyinbook.json.bean.ShopInfo;
 
 /**
  * FastJson数据解析框架（阿里开源）
@@ -61,6 +63,7 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
         switch (v.getId()) {
             case R.id.btn_json_to_java:
                 //（1）将json格式的字符串{}转换为Java对象
+                jsonToJavaObjectByFastJson();
                 break;
             case R.id.btn_jsonarray_to_javalist:
                 //（2）将json格式的字符串[]转换为Java对象的List
@@ -74,5 +77,22 @@ public class FastJsonParseActivity extends AppCompatActivity implements View.OnC
             default:
                 break;
         }
+    }
+
+    /**
+     * 将json格式的字符串{}转换为Java对象
+     */
+    private void jsonToJavaObjectByFastJson() {
+        //1.创建或获取json数据
+        String json = "{\n" +
+                "\t\"id\":2, \"name\":\"大虾\", \n" +
+                "\t\"price\":12.3, \n" +
+                "\t\"imagePath\":\"http://192.168.10.165:8080/L05_Server/images/f1.jpg\"\n" +
+                "}\n";
+        //2.解析json数据
+        ShopInfo shopInfo = JSON.parseObject(json, ShopInfo.class);
+        //3.展示数据
+        mtxtOriginal.setText(json);
+        mtxtLatest.setText(shopInfo.toString());
     }
 }
