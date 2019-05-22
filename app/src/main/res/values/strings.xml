@@ -29,4 +29,5 @@
     <string name="xutils3_btn_image_list">xUtils3加载列表图片</string>
     <!--FragmentXutils3Activity-->
     <string name="xutils3fragment_txt_title_name">在Fragment中使用注解</string>
+    <string name="xutils3_btn_fragment">Fragment的按钮</string>
 </resources>
