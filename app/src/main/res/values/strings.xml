@@ -21,5 +21,10 @@
     <string name="fastjson_btn_jsonarraytojavalist">将json数组转换为json集合</string>
     <string name="fastjson_btn_javatojson">将java对象转换为json对象</string>
     <string name="fastjson_btn_javalisttojsonarray">将java集合转换为json数组</string>
-
+    <!--XUtils3Activity-->
+    <string name="xutils3_txt_title_name">XUtils3</string>
+    <string name="xutils3_btn_annotation_module">xUtils3注解模块</string>
+    <string name="xutils3_btn_net">xUtils3联网模块</string>
+    <string name="xutils3_btn_image">xUtils3加载单张图片</string>
+    <string name="xutils3_btn_image_list">xUtils3加载列表图片</string>
 </resources>

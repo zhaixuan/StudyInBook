@@ -14,6 +14,7 @@ import com.dionysus.stydyinbook.jsonparse.fastjson.FastJsonParseActivity;
 import com.dionysus.stydyinbook.jsonparse.gson.GsonParseActivity;
 import com.dionysus.stydyinbook.jsonparse.json.activity.NativeJsonParseActivity;
 import com.dionysus.stydyinbook.okhttp.activity.OkHttpActivity;
+import com.dionysus.stydyinbook.xuitls3.XUitls3Acticity;
 
 /**
  * Author:Dionysus
@@ -50,6 +51,11 @@ public class CommonFrameFragment extends BaseFragment {
                 } else if ("fastjson".equals(data.toLowerCase())) {
                     // 点击条目跳转到FastJson解析界面
                     Intent intent = new Intent(mContext, FastJsonParseActivity.class);
+                    mContext.startActivity(intent);
+                } else if ("xutils3".equals(data.toLowerCase()))
+                {
+                    // 点击条目跳转到XUtils3界面
+                    Intent intent = new Intent(mContext, XUitls3Acticity.class);
                     mContext.startActivity(intent);
                 }
                 Toast.makeText(mContext, data, Toast.LENGTH_SHORT).show();
