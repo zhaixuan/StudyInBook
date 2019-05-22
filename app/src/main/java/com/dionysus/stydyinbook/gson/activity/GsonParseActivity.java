@@ -1,8 +1,8 @@
 package com.dionysus.stydyinbook.gson.activity;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,6 +10,13 @@ import android.widget.TextView;
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.json.bean.ShopInfo;
 import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Gson解析页面
@@ -60,6 +67,7 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.btn_jsonarray_to_javalist:
                 //（2）将json格式的字符串[]转换为Java对象的List
+                jsonToJavaListByGson();
                 break;
             case R.id.btn_gson_java_to_jsonobject:
                 //（3）将Java对象转换为json字符串{}
@@ -71,6 +79,51 @@ public class GsonParseActivity extends AppCompatActivity implements View.OnClick
                 break;
 
         }
+    }
+
+    /**
+     * 将json格式的字符串[]转换为Java对象的List
+     */
+    private void jsonToJavaListByGson() {
+        //1.获取或创建数据
+        String json = "[\n" +
+                "    {\n" +
+                "        \"id\": 1,\n" +
+                "        \"imagePath\": \"http://192.168.10.165:8080/f1.jpg\",\n" +
+                "        \"name\": \"大虾1\",\n" +
+                "        \"price\": 12.3\n" +
+                "    },\n" +
+                "    {\n" +
+                "        \"id\": 2,\n" +
+                "        \"imagePath\": \"http://192.168.10.165:8080/f2.jpg\",\n" +
+                "        \"name\": \"大虾2\",\n" +
+                "        \"price\": 12.5\n" +
+                "    }\n" +
+                "]";
+        // 4.创建集合
+        List<Object> shops = new ArrayList<>();
+        // 2.解析json数据
+        try {
+            JSONArray jsonArray = new JSONArray(json);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                if (null != jsonObject) {
+                    int id = jsonObject.optInt("id");
+                    String name = jsonObject.optString("name");
+                    Double price = jsonObject.optDouble("price");
+                    String imagePath = jsonObject.optString("imagePath");
+                    // 3.封装java对象
+                    ShopInfo shopInfo = new ShopInfo(id, name, price, imagePath);
+                    // 5.将java对象存储到集合中
+                    shops.add(shopInfo);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        // 6.展示数据
+        mtxtOriginal.setText(json);
+        mtxtLast.setText(shops.toString());
     }
 
     /**
