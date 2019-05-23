@@ -111,13 +111,15 @@ public class XUtils3NetActivity extends AppCompatActivity {
      * 下载文件
      */
     private void downloadFile() {
-        RequestParams params = new RequestParams("http://vfx.mtime.cn/Video/2019/05/20/mp4/190520174109301918.mp4");
+        RequestParams params = new RequestParams("http://vfx.mtime.cn/Video/2019/05/20/mp4/190520100523524835.mp4");
         //设置保存路径
-        params.setSaveFilePath(Environment.getExternalStorageDirectory() + "/studyInBook/西部世界(预告).mp4");
+        params.setSaveFilePath(Environment.getExternalStorageDirectory() + "/studyInBook/龙珠超-布罗利的归来(预告).mp4");
         //设置是否可以立即取消下载
         params.setCancelFast(true);
         //设置是否自动命名
         params.setAutoRename(false);
+        //设置断点续传
+        params.setAutoResume(true);
         //自定义线程池，有效的范围值[1,3]设置为3时，可能阻塞图片加载
         params.setExecutor(new PriorityExecutor(3, true));
         x.http().get(params, new Callback.ProgressCallback<File>() {
