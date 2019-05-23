@@ -100,11 +100,70 @@ public class XUtils3NetActivity extends AppCompatActivity {
                 downloadFile();
                 break;
             case R.id.btn_file_upload:
-                Toast.makeText(mContext, "响应测试", Toast.LENGTH_SHORT).show();
+                uploadFile();
                 break;
             default:
                 break;
         }
+    }
+
+    /**
+     * 文件上传
+     */
+    private void uploadFile() {
+        RequestParams params = new RequestParams("http://192.168.31.230:8080/FileUpload/FileUploadServlet");
+        //以表单方式上传
+        params.setMultipart(true);
+        //设置上传文件的路径
+        params.addBodyParameter("File"
+                , new File(Environment.getExternalStorageDirectory()
+                        + "/studyInBook/龙珠超-布罗利的归来(预告).mp4"), null, "龙珠.mp4");
+        x.http().post(params, new Callback.ProgressCallback<File>() {
+            /**
+             * 下载成功的时候回调这个方法，并且将文件下载到哪个路径回传过来
+             * @param file
+             */
+            @Override
+            public void onSuccess(File file) {
+                Log.e(TAG, "onSuccess：" + file.toString());
+                Toast.makeText(XUtils3NetActivity.this, "onSuccess：" + file.toString()
+                        , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                Log.e(TAG, "onError：" + ex.getMessage());
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+                Log.e(TAG, "onCancelled：" + cex.getMessage());
+            }
+
+            @Override
+            public void onFinished() {
+                Log.e(TAG, "onFinished：");
+            }
+
+            @Override
+            public void onWaiting() {
+                Log.e(TAG, "onWaiting：");
+            }
+
+            @Override
+            public void onStarted() {
+                Log.e(TAG, "onStarted：");
+            }
+
+            @Override
+            public void onLoading(long total, long current, boolean isDownloading) {
+                mProgressbar.setMax((int) total);
+                mProgressbar.setProgress((int) current);
+                Log.e(TAG, "onLoading：" + current
+                        + "/" + total + "\n"
+                        + "isDownloading：" + isDownloading);
+            }
+        });
     }
 
     /**
