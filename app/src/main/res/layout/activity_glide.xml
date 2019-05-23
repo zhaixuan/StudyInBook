@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".glide.activity.GlideActivity">
+
+    <include layout="@layout/titlebar" />
+
+    <Button
+        android:id="@+id/btn_base_use"
+        style="@style/button_style"
+        android:text="@string/glide_btn_base_use" />
+
+    <Button
+        android:id="@+id/btn_recyclerview"
+        style="@style/button_style"
+        android:text="@string/glide_btn_recyclerview" />
+
+    <Button
+        android:id="@+id/btn_tranfromtations"
+        style="@style/button_style"
+        android:text="@string/glide_btn_tranfromtations" />
+
+</LinearLayout>

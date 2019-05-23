@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.adapter.CommonFrameAdapter;
 import com.dionysus.stydyinbook.base.BaseFragment;
+import com.dionysus.stydyinbook.glide.activity.GlideActivity;
 import com.dionysus.stydyinbook.jsonparse.fastjson.FastJsonParseActivity;
 import com.dionysus.stydyinbook.jsonparse.gson.GsonParseActivity;
 import com.dionysus.stydyinbook.jsonparse.json.activity.NativeJsonParseActivity;
@@ -56,6 +57,11 @@ public class CommonFrameFragment extends BaseFragment {
                 {
                     // 点击条目跳转到XUtils3界面
                     Intent intent = new Intent(mContext, XUitls3Acticity.class);
+                    mContext.startActivity(intent);
+                }else if ("glide".equals(data.toLowerCase()))
+                {
+                    // 点击条目跳转到Glide界面
+                    Intent intent = new Intent(mContext, GlideActivity.class);
                     mContext.startActivity(intent);
                 }
                 Toast.makeText(mContext, data, Toast.LENGTH_SHORT).show();

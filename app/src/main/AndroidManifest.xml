@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApplication"
@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".xuitls3.net.XUtils3NetActivity"></activity>
+        <activity android:name=".glide.activity.GlideActivity"></activity>
+        <activity android:name=".xuitls3.net.XUtils3NetActivity" />
         <activity android:name=".xuitls3.annotation.FragmentXutils3Acitivty" />
         <activity android:name=".xuitls3.XUitls3Acticity" />
         <activity android:name=".jsonparse.fastjson.FastJsonParseActivity" />
