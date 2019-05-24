@@ -1,34 +1,55 @@
 package com.dionysus.stydyinbook.glide.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.dionysus.stydyinbook.R;
 
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.ViewInject;
-import org.xutils.x;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-@ContentView(R.layout.activity_glide)
 public class GlideActivity extends AppCompatActivity {
 
-    @ViewInject(R.id.txt_title)
-    private TextView mtxtTitle;
-    @ViewInject(R.id.btn_base_use)
-    private Button mbtnBaseUse;
-    @ViewInject(R.id.btn_recyclerview)
-    private Button mbtnRecyclerview;
-    @ViewInject(R.id.btn_tranfromtations)
-    private Button mbtnTranfromtations;
+    @BindView(R.id.txt_title)
+    TextView mtxtTitle;
+    @BindView(R.id.btn_base_use)
+    Button mbtnBaseUse;
+    @BindView(R.id.btn_recyclerview)
+    Button mbtnRecyclerview;
+    @BindView(R.id.btn_tranfromtations)
+    Button mbtnTranfromtations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glide);
-        x.view().inject(this);
-        //设置标题名称
-        mtxtTitle.setText(getString(R.string.glide_txt_title_name));
+        ButterKnife.bind(this);
+        initData();
+    }
+
+    private void initData() {
+        mtxtTitle.setText("Glide");
+    }
+
+    @OnClick({R.id.btn_base_use, R.id.btn_recyclerview, R.id.btn_tranfromtations})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_base_use:
+                startActivity(new Intent(this, GlideBaseActivity.class));
+                break;
+            case R.id.btn_recyclerview:
+                startActivity(new Intent(this, GlideRecyclerviewActivity.class));
+                break;
+            case R.id.btn_tranfromtations:
+                startActivity(new Intent(this, GlideTranformationsActivity.class));
+                break;
+            default:
+                break;
+        }
     }
 }
