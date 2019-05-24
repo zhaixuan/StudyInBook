@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">ButterKnifeSample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Demos name in list-->
+    <string name="demo_find_view_in_activity">Find View in Activity</string>
+    <string name="demo_find_view_in_fragment">Find View in Fragment</string>
+    <string name="demo_find_view_in_listview">Find View in ListView and Adapter</string>
+    <string name="demo_find_views_into_list">Find Views into a List</string>
+    <string name="demo_item_selected_listener">Item Selected Listener in Spinner</string>
+
+    <!--Demo1: Simple Activity-->
+    <string name="title_activity_simple">SimpleActivity</string>
+    <string name="simple_text_view">TextView</string>
+    <string name="simple_button">Button</string>
+    <string name="simple_checkbox">CheckBox</string>
+
+    <!--Demo2: Simple Fragment-->
+    <string name="title_activity_simple_fragment">SimpleFragmentActivity</string>
+    <string name="simple_fragment_text">Simple Fragment</string>
+
+    <!--Demo3: ListView and Adapter-->
+    <string name="title_activity_list_view">ListViewActivity</string>
+
+    <!--Demo4: Multiple Views in List-->
+    <string name="title_activity_view_lists">ViewListsActivity</string>
+    <string name="label_first">First Name</string>
+    <string name="label_middle">Middle Name</string>
+    <string name="label_last">Last Name</string>
+    <string name="button_enable">Enable</string>
+    <string name="button_disable">Disable</string>
+    <string name="button_alpha_0">Alpha to 0</string>
+    <string name="button_alpha_1">Alpha to 1</string>
+
+    <!--Demo5: Spinner onItemSelected-->
+    <string name="title_activity_spinner">SpinnerActivity</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+    <string name="clear_spinner_data">Clear</string>
+    <string name="set_spinner_data">Set</string>
+
+
+</resources>
