@@ -46,7 +46,7 @@ public class GlideActivity extends AppCompatActivity {
                 startActivity(new Intent(this, GlideRecyclerviewActivity.class));
                 break;
             case R.id.btn_tranfromtations:
-                startActivity(new Intent(this, GlideTranformationsActivity.class));
+                startActivity(new Intent(this, GlideTransformationActivity.class));
                 break;
             default:
                 break;

@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.dionysus.stydyinbook.R;
 
-public class GlideTranformationsActivity extends Activity {
+public class GlideTransformationActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

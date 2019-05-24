@@ -49,4 +49,12 @@
     <string name="butterknife_text_set">这个是Butterknife的使用讲解页面</string>
     <string name="butterknife_cb_name">Checkbox</string>
     <string name="butterknife_button">这是一个按钮</string>
+    <!--GlideActivity-->
+    <string name="glide_txt_title">Glide</string>
+    <!--GlideBaseActivity-->
+    <string name="glide_txt_base_title">Glide基本使用</string>
+    <!--GlideRecyclerviewActivity-->
+    <string name="glide_txt_recyclerview_title">Glide</string>
+    <!--GlideTransformationActivity-->
+    <string name="glide_txt_transformation_title">Glide</string>
 </resources>

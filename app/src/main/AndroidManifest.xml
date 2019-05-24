@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".glide.activity.GlideTranformationsActivity"></activity>
+        <activity android:name=".glide.activity.GlideTransformationActivity"></activity>
         <activity android:name=".glide.activity.GlideRecyclerviewActivity" />
         <activity android:name=".glide.activity.GlideBaseActivity" />
         <activity android:name=".butterknife.ButterKnifeActivity" />

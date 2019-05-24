@@ -30,4 +30,19 @@
         <item name="android:textSize">18dp</item>
     </style>
 
+
+    <!--Glid基本使用页面的textview图片-->
+    <style name="glide_textview_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <!--Glid基本使用页面的imageview图片-->
+    <style name="glide_imageview_style">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+    </style>
+
 </resources>
