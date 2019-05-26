@@ -57,4 +57,15 @@
     <string name="glide_txt_recyclerview_title">Glide</string>
     <!--GlideTransformationActivity-->
     <string name="glide_txt_transformation_title">Glide</string>
+    <!--EventBus-->
+    <string name="eventbus_txt_title">EventBus</string>
+    <string name="eventbus_btn_send">跳转到发送页面</string>
+    <string name="eventbus_btn_sticky_send">发送粘性事件跳转到发送页面</string>
+    <string name="eventbus_txt_result">接收显示的结果：</string>
+    <string name="eventbus_send_txt_title">EventBus发送数据页面</string>
+    <string name="eventbus_btn_send_main">主线程发送数据</string>
+    <string name="eventbus_txt_receive_main">这是主线程发送过来的数据</string>
+    <string name="eventbus_btn_send_sticky">接收粘性数据</string>
+    <string name="eventbus_txt_send_result">显示结果：</string>
+    <string name="eventbus_txt_receive_sticky">这是一条粘性事件消息</string>
 </resources>

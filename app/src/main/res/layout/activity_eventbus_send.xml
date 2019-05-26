@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".eventbus.activity.EventBusSendActivity">
+
+    <include layout="@layout/titlebar"></include>
+
+    <Button
+        android:id="@+id/bt_eventbus_send_main"
+        style="@style/button_style"
+        android:text="@string/eventbus_btn_send_main" />
+
+    <Button
+        android:id="@+id/bt_eventbus_send_sticky"
+        style="@style/button_style"
+        android:text="@string/eventbus_btn_send_sticky" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/eventbus_txt_send_result"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_eventbus_send_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:textColor="@android:color/holo_red_light" />
+
+</LinearLayout>

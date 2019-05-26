@@ -11,6 +11,7 @@ import com.dionysus.stydyinbook.R;
 import com.dionysus.stydyinbook.adapter.CommonFrameAdapter;
 import com.dionysus.stydyinbook.base.BaseFragment;
 import com.dionysus.stydyinbook.butterknife.ButterKnifeActivity;
+import com.dionysus.stydyinbook.eventbus.activity.EventBusActivity;
 import com.dionysus.stydyinbook.glide.activity.GlideActivity;
 import com.dionysus.stydyinbook.jsonparse.fastjson.FastJsonParseActivity;
 import com.dionysus.stydyinbook.jsonparse.gson.GsonParseActivity;
@@ -65,6 +66,10 @@ public class CommonFrameFragment extends BaseFragment {
                 } else if ("butterknife".equals(data.toLowerCase())) {
                     // 点击条目跳转到ButterKnife界面
                     Intent intent = new Intent(mContext, ButterKnifeActivity.class);
+                    mContext.startActivity(intent);
+                } else if ("eventbus".equals(data.toLowerCase())) {
+                    // 点击条目跳转到ButterKnife界面
+                    Intent intent = new Intent(mContext, EventBusActivity.class);
                     mContext.startActivity(intent);
                 }
                 Toast.makeText(mContext, data, Toast.LENGTH_SHORT).show();
